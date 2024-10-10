@@ -1,4 +1,4 @@
 # Atividade2
 Exercício Prático 2 - RESTIC
 
-Clara Leticia Dantes e Anderson Silva Brito
+Clara Leticia Dantas Ricardo e Anderson Silva Brito
