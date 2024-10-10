@@ -1,6 +1,7 @@
 from rest_framework import generics
 from .models import Livro, Categoria, Autor
 from .serializers import LivroSerializer, CategoriaSerializer, AutorSerializer
+from .filters import LivroFilter
 
 # Clara
 class LivroList(generics.ListCreateAPIView):
@@ -18,6 +19,8 @@ class LivroDetail(generics.RetrieveUpdateDestroyAPIView):
 class CategoriaList(generics.ListCreateAPIView):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
+    ordering_fields = ['nome']
+    search_fields = ['^nome']
     name = "Categoria-list"
     
 class CategoriaDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -28,6 +31,8 @@ class CategoriaDetail(generics.RetrieveUpdateDestroyAPIView):
 class AutorList(generics.ListCreateAPIView):
     queryset = Autor.objects.all()
     serializer_class = AutorSerializer
+    ordering_fields = ['nome']
+    search_fields = ['^nome']
     name = "Autor-list"
  
 class AutorDetail(generics.RetrieveUpdateDestroyAPIView):
